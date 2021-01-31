@@ -25,6 +25,7 @@ void dfs(int depth, int op1, int op2, int op3, int op4, long long res)
 	if (op4)
 		dfs(depth + 1, op1, op2, op3, op4 - 1, res / A[depth]);
 }
+
 int main()
 {
 	int i;
