@@ -32,21 +32,16 @@ int fishing(int col)
 {
 	int i;
 	int res = 0;
-	bool flag = false;
 
 	for (i = 1; i <= R; i++)
 	{
 		if (area[i][col])
 		{
-			flag = true;
+			res = shark[area[i][col]].z;
+			shark[area[i][col]].alive = 0;
+			area[i][col] = 0;
 			break;
 		}
-	}
-	if (flag)
-	{
-		res = shark[area[i][col]].z;
-		shark[area[i][col]].alive = 0;
-		area[i][col] = 0;
 	}
 	return res;
 }
