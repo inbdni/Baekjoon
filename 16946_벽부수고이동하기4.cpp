@@ -47,7 +47,6 @@ void bfs(int n, int m)
 
 int move(int n, int m)
 {
-	queue< pair<int, int> > q;
 	vector<bool> check;
 	int i, dn, dm, res = 1;
 
