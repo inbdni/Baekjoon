@@ -53,6 +53,10 @@ void bfs()
 				else if (fish.r == curr.r && fish.c > curr.c)
 					fish = curr;
 			}
+			else
+			{
+				return;
+			}
 		}
 		for (i = 0; i < 4; i++)
 		{
