@@ -20,7 +20,7 @@ long long calc(long long n, char op)
 void bfs()
 {
 	queue< pair<long long, string> > q;
-	pair<long long, string> curr, next;
+	pair<long long, string> curr;
 	set<long long> check;
 	char op[] = {'*', '+', '-', '/'};
 	long long res;
