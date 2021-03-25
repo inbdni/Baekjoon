@@ -21,14 +21,14 @@ void make_board()
 	{
 		for (l = 0; l < limit; l++)
 		{
-			board[r][c] = num++;
-			r += dr[dir];
-			c += dc[dir];
 			if (num == target)
 			{
 				pos[0] = r;
 				pos[1] = c;
 			}
+			board[r][c] = num++;
+			r += dr[dir];
+			c += dc[dir];
 		}
 		if (++dir == 4)
 			dir = 0;
