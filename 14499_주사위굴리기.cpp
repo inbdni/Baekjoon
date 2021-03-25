@@ -7,6 +7,10 @@
 
 #define TOP		0
 #define BOTTOM	5
+#define LEFT	3
+#define RIGHT	2
+#define FRONT	4
+#define BACK	1
 
 using namespace std;
 
@@ -34,8 +38,8 @@ bool move(int dir)
 void roll(int dir)
 {
 	int i, tmp;
-	int hor[] = {0, 3, 5, 2};
-	int ver[] = {0, 1, 5, 4};
+	int hor[] = {TOP, LEFT, BOTTOM, RIGHT};
+	int ver[] = {TOP, BACK, BOTTOM, FRONT};
 
 	if (dir == EAST)
 	{
