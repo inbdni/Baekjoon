@@ -56,18 +56,18 @@ int main()
 {
 	int i, d;
 	string s;
-	bool flag = false;
+	bool valid = true;
 	queue< pair<string, int> > cmd;
 
 	cin >> M >> N;
-	robot.r = 0;
-	robot.c = 0;
-	robot.dir = EAST;
 	for (i = 0; i < N; i++)
 	{
 		cin >> s >> d;
 		cmd.push(make_pair(s, d));
 	}
+	robot.r = 0;
+	robot.c = 0;
+	robot.dir = EAST;
 	while (!cmd.empty())
 	{
 		s = cmd.front().first;
@@ -81,13 +81,13 @@ int main()
 		move(d);
 		if (!in_range())
 		{
-			flag = true;
+			valid = false;
 			break;
 		}
 	}
-	if (flag)
-		cout << -1 << endl;
-	else
+	if (valid)
 		cout << robot.c << " " << robot.r << endl;
+	else
+		cout << -1 << endl;
 	return 0;
 }
