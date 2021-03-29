@@ -36,7 +36,7 @@ void dfs(int num, int cnt)
 		answer = min(answer, get_diff());
 		return;
 	}
-	if (num > N)
+	if ((N - num) < (N / 2 - cnt))
 	{
 		return;
 	}
