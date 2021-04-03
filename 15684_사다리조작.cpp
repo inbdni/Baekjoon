@@ -6,7 +6,7 @@ int N;
 int M;
 int H;
 int answer;
-bool board[32][12];
+bool ladder[32][12];
 
 bool game()
 {
@@ -17,9 +17,9 @@ bool game()
 		line = i;
 		for (j = 1; j <= H; j++)
 		{
-			if (board[j][line - 1])
+			if (ladder[j][line - 1])
 				line--;
-			else if (board[j][line])
+			else if (ladder[j][line])
 				line++;		
 		}
 		if (line != i)
@@ -47,11 +47,11 @@ void dfs(int height, int cnt)
 	{
 		for (j = 1; j < N; j++)
 		{
-			if (board[i][j - 1] || board[i][j] || board[i][j + 1])
+			if (ladder[i][j - 1] || ladder[i][j] || ladder[i][j + 1])
 				continue;
-			board[i][j] = true;
+			ladder[i][j] = true;
 			dfs(i, cnt + 1);
-			board[i][j] = false;
+			ladder[i][j] = false;
 		}
 	}
 }
@@ -64,7 +64,7 @@ int main()
 	for (i = 0; i < M; i++)
 	{
 		cin >> a >> b;
-		board[a][b] = true;
+		ladder[a][b] = true;
 	}
 	answer = 4;
 	dfs(1, 0);
