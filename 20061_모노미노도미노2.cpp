@@ -7,12 +7,6 @@ int N;
 vector< vector<int> > green;
 vector< vector<int> > blue;
 
-void init()
-{
-	green.resize(6, vector<int> (4));
-	blue.resize(6, vector<int> (4));
-}
-
 void put_block(int t, int x, int y)
 {
 	int gx = -1;
@@ -141,7 +135,8 @@ int main()
 	int score = 0;
 
 	cin >> N;
-	init();
+	green.resize(6, vector<int> (4));
+	blue.resize(6, vector<int> (4));
 	while (N--)
 	{
 		cin >> t >> x >> y;
