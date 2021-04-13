@@ -82,8 +82,6 @@ bool exist(int num, vector<pos> &piece)
 {
 	int i;
 
-	if (piece[num].finish)
-		return false;
 	for (i = 0; i < 4; i++)
 	{
 		if (i == num || piece[i].finish)
